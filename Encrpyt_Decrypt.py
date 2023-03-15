@@ -43,7 +43,4 @@ elif choice.lower() == 'd':
     shift = int(input("Enter the Shift value:"))
     decrypted = decrypt(text1, shift)
     print(decrypted)  # "Hello, world!"
-
-
-
-
+    
