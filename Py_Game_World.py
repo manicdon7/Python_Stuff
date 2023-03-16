@@ -53,10 +53,10 @@ def mad_libs():
 import random
 
 def story_game():
-    names = ["Alice", "Bob", "Charlie", "Diana", "Eric", "Fiona"]
-    items = ["spoon", "toothbrush", "umbrella", "necklace", "sock", "book"]
-    places = ["park", "beach", "mall", "library", "restaurant", "zoo"]
-    actions = ["lost", "found", "stole", "borrowed", "ate", "bought"]
+    names = input("Enter Some Name seperated by commas:").split(",")
+    items = input("Enter Some Items seperated by commas:").split(",")
+    places = input("Enter Some Places seperated by commas:").split(",")
+    actions = input("Enter Some Actions seperated by commas:").split(",")
     
     name1 = random.choice(names)
     name2 = random.choice(names)
@@ -64,9 +64,10 @@ def story_game():
     place = random.choice(places)
     action = random.choice(actions)
     
-    story = f"Once upon a time, {name1} went to the {place} and {action} {name2}'s {item}. But when {name1} got home, they realized that they were missing one of their socks! They searched everywhere, but the missing sock was nowhere to be found. They even went back to the {place} to look for it, but it was gone.\n\nThe end."
+    story = f"Once upon a time, {name1} went to the {place} and {action} {name2}'s {item}. But when {name1} got home, they realized that they were missing one of their {item}! They searched everywhere, but the missing {item} was nowhere to be found. They even went back to the {place} to look for it, but it was gone.\n\nThe end."
     
     print(story)
+    
 
 print("\t\tHEY! WELCOME TO THE PYTHON GAME WORLD!\n")
 print("Which Game you wanna play:\n")
