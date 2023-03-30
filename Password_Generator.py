@@ -27,5 +27,3 @@ use_special_chars = input("Use special characters? (y/n): ").lower() == 'y'
 
 password = generate_password(password_length, use_uppercase, use_lowercase, use_numbers, use_special_chars)
 print("Generated password:", password)
-
-
