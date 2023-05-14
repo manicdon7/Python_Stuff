@@ -47,7 +47,6 @@ def download_video(entry_field):
         button = CTkButton(error,text="OK",command=error.destroy)
         button.grid(row=1,column=0)
         error.mainloop()
-
         
 master = CTk()
 master.title("Youtube Downloader")
