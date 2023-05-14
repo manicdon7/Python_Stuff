@@ -12,6 +12,8 @@ for i in os.listdir(os.getcwd()):
     
 else:
     os.mkdir("youtube_downloads")
+
+
         
 def download_video(entry_field):
     try:
@@ -21,13 +23,13 @@ def download_video(entry_field):
         end_time = time()
         
         popup = CTk()
-        popup.title = ("Downlader status")
+        popup.title("Downloader status")  # fixed line
         popup.resizable(False,False)
         popup.geometry("200x100")
         popup.columnconfigure(0,weight=1)
         popup.rowconfigure((0,1),weight=1)
         msg = StringVar()
-        msg.set(f"Download successful!\n Total time taken {round(end_time-start_time,3)}seconds")
+        msg.set(f"Download successful!\nTotal time taken {round(end_time-start_time,3)} seconds")
         label = CTkLabel(popup, text=msg.get())
         label.grid(row=0, column=0)
         button = CTkButton(popup, text="OK", command=popup.destroy)
@@ -50,7 +52,7 @@ master = CTk()
 master.title("Youtube Downloader")
 master.grid_rowconfigure((0,1),weight=1)
 master.grid_columnconfigure((0,1),weight=1)
-master.geometry("300x150")
+master.geometry("400x250")
 master.resizable(False,False)
 CTkLabel(master,text="Enter a Youtube Link to Download:").grid(row=0,column=0)
 entry = CTkEntry(master)
