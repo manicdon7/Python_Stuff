@@ -1,66 +1,54 @@
-def show_menu():
-    print("MENU")
-    print("1. Add Task")
-    print("2. View Tasks")
-    print("3. Mark Task as Completed")
-    print("4. Delete Task")
-    print("5. Exit")
+from tkinter import *
+from customtkinter import *
 
+class TodoList:
+    def __init__(self, master):
+        self.tasks = []
+        self.master = master
+        master.title("To-Do List")
+        master.geometry("400x300")
 
-def add_task(tasks):
-    task = input("Enter the task: ")
-    tasks.append(task)
-    print("Task added successfully!")
+        self.task_entry = Entry(master)
+        self.task_entry.pack()
 
+        self.add_button = Button(master, text="Add Task", command=self.add_task)
+        self.add_button.pack()
 
-def view_tasks(tasks):
-    if len(tasks) == 0:
-        print("No tasks found.")
-    else:
-        print("TASKS")
-        for index, task in enumerate(tasks):
-            print(f"{index+1}. {task}")
+        self.task_list = Listbox(master)
+        self.task_list.pack()
 
+        self.mark_button = Button(master, text="Mark Completed", command=self.mark_completed)
+        self.mark_button.pack()
 
-def mark_completed(tasks):
-    view_tasks(tasks)
-    task_number = int(input("Enter the task number to mark as completed: "))
-    if 1 <= task_number <= len(tasks):
-        print(f"Marked '{tasks[task_number-1]}' as completed.")
-        tasks.pop(task_number-1)
-    else:
-        print("Invalid task number.")
+        self.delete_button = Button(master, text="Delete Task", command=self.delete_task)
+        self.delete_button.pack()
 
+    def add_task(self):
+        task = self.task_entry.get()
+        if task:
+            self.tasks.append(task)
+            self.task_list.insert(END, task)
+            self.task_entry.delete(0, END)
 
-def delete_task(tasks):
-    view_tasks(tasks)
-    task_number = int(input("Enter the task number to delete: "))
-    if 1 <= task_number <= len(tasks):
-        print(f"Deleted '{tasks[task_number-1]}' from the list.")
-        tasks.pop(task_number-1)
-    else:
-        print("Invalid task number.")
+    def mark_completed(self):
+        selected = self.task_list.curselection()
+        if selected:
+            index = selected[0]
+            completed_task = self.task_list.get(index)
+            self.task_list.delete(index)
+            self.tasks.remove(completed_task)
 
+    def delete_task(self):
+        selected = self.task_list.curselection()
+        if selected:
+            index = selected[0]
+            deleted_task = self.task_list.get(index)
+            self.task_list.delete(index)
+            self.tasks.remove(deleted_task)
 
-def main():
-    tasks = []
-    while True:
-        show_menu()
-        choice = input("Enter your choice (1-5): ")
-        if choice == '1':
-            add_task(tasks)
-        elif choice == '2':
-            view_tasks(tasks)
-        elif choice == '3':
-            mark_completed(tasks)
-        elif choice == '4':
-            delete_task(tasks)
-        elif choice == '5':
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please try again.")
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    set_appearance_mode("System")
+    set_default_color_theme("blue")
+    root = Tk()
+    todo_list = TodoList(root)
+    root.mainloop()
