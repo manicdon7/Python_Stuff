@@ -52,4 +52,3 @@ if __name__ == "__main__":
     root = Tk()
     todo_list = TodoList(root)
     root.mainloop()
-    
