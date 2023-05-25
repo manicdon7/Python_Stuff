@@ -6,7 +6,6 @@ class Musicplayer:
         def __init__(self, root):
                 self.root = root
                 self.root.title("Music Player")
-
                 self.current_track = None
                 self.paused = False
 
