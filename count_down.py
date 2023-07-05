@@ -13,4 +13,4 @@ def countdown(user_time):
 
 if __name__ == '__main__':
    user_time = int(input("Enter a time in seconds: "))
-   countdown(user_time)
+   countdown(user_time
