@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup as bs
 github_user = input("Github username:")
 #get the github username 
 url = "https://github.com/"+ github_user
-
 req = requests.get(url)
 #get the request of the url
 soup = bs(req.content,'html.parser')
