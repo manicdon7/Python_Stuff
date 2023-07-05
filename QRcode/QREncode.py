@@ -11,5 +11,4 @@ qr.make(fit=True)
 img = qr.make_image(fill_color='black', back_color= 'white')
 
 img.save("C:/Users/manic/OneDrive/Pictures/myqrcode.png")
-
 #to save the encoded qrcode image in the desired place
