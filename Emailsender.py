@@ -23,7 +23,6 @@ def send_email(api_key, api_secret, sender_email, receiver_email, subject, messa
             ]
         }
 
-
         # Send the email using the Mailjet API
         response = mailjet.send.create(data=data)
 
