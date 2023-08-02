@@ -1,4 +1,3 @@
-
 while True:
     def createaccount():
         choice = input("Are you new to our community?\n if yes press 1\n if no press 2\n")
