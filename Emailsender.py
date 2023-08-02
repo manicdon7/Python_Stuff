@@ -44,3 +44,4 @@ message = 'This is an automated email sent from Python using Mailjet. Have a nic
 
 # Call the function to send the email
 send_email(mailjet_api_key, mailjet_api_secret, sender_email, receiver_email, subject, message)
+
