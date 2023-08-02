@@ -9,7 +9,6 @@ while True:
         else:
             print("Enter a valid answer")
 
-
     def signup():
         my_dict = {}
         email_id = input("Enter your email_id :")
