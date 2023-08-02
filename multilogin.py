@@ -1,4 +1,14 @@
 while True:
+    def createaccount():
+        choice = input("Are you new to our community?\n if yes press 1\n if no press 2\n")
+        if choice == '1':
+            signup()
+        elif choice == '2':
+            signup.login()
+        else:
+            print("Enter a valid answer")
+
+
     def signup():
         my_dict = {}
         email_id = input("Enter your email_id :")
