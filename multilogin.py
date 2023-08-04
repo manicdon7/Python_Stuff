@@ -1,4 +1,5 @@
 while True:
+    my_dict = {}
     def createaccount():
         choice = input("Are you new to our community?\n if yes press 1\n if no press 2\n")
         if choice == '1':
@@ -10,7 +11,7 @@ while True:
 
 
     def signup():
-        my_dict = {}
+        
         email_id = input("Enter your email_id :")
         signup_password = input("Enter your Password :")
         category = input("Enter your Category \n1.NGO people \n2.Food people\n") 
@@ -64,8 +65,18 @@ while True:
         if choice == '1':
             signup()
         elif choice == '2':
-            signup.login()
+            login1()
+            
         else:
             print("Enter a valid answer")
+            
+            
+    def login1():
+                login_id = input("enter your email:")
+                password = input("Enter your password:")
+                if login_id and password in my_dict:
+                    print(my_dict["category"])
+                
+                    
             
     createaccount()
