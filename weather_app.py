@@ -51,7 +51,6 @@ def main():
     try:
         weather_data = get_weather(location)
         display_weather(weather_data)
-        
         forecast_data = get_forecast(location)
         display_forecast(forecast_data)
     except Exception as e:
